@@ -89,8 +89,6 @@
             <div class="modal-body">
                 <h3>ガチャコード</h3>
                 <br>
-                <qr-code v-bind:value="qrcodeStr"></qr-code>
-                <br>
                 <h1 v-for="select in selected">@{{select.code}}</h1>
             </div>
             <div class="modal-footer">
