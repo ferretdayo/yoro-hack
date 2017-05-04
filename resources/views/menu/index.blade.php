@@ -70,7 +70,7 @@
         </div>
         <div class="submit">
             <button class="btn btn-warning btn-block" v-if="selected.length > 0" data-toggle="modal" data-target="#myModal">注文</button>
-            <button class="btn btn-warning btn-block" data-toggle="modal" v-on:click="error()">注文</button>
+            <button class="btn btn-warning btn-block" v-if="selected.length <= 0" data-toggle="modal" v-on:click="error()">注文</button>
         </div>
     </div>
 </div>
