@@ -9,7 +9,7 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 .menu-list {
-    background-color: white;
+    //background-color: white;
     height: 1vh;
     .title {
         font-size: 20px;
@@ -41,7 +41,8 @@
     position: fixed;
     bottom: 50px;
     .title {
-        font-size: 20px;
+        text-align: center;
+        font-size: 22px;
         margin-right: 40px;
     }
 }
