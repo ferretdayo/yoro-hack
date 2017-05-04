@@ -37,9 +37,10 @@ const app = new Vue({
             drinks: [
                 {id: 10, name: "焼酎", img: "http://localhost:8000/img/shou.png", code: "item2"},
                 {id: 11, name: "ビール", img: "http://localhost:8000/img/beer.jpg", code: "b1"},
+                {id: 12, name: "日本酒", img: "http://localhost:8000/img/sake.jpg", code: "item3"},
             ],
             desserts: [
-                {id: 12, name: "ゴロッとフルーツ", img: "http://localhost:8000/img/furu.png", code: "f1"},
+                {id: 13, name: "ゴロッとフルーツ", img: "http://localhost:8000/img/furu.png", code: "f1"},
             ],
         }
     },
