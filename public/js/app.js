@@ -780,13 +780,15 @@ __webpack_require__(29);
 
 window.Vue = __webpack_require__(37);
 
+//window.VueQRCodeComponent = require('vue-qrcode-component')
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', __webpack_require__(34));
+//Vue.component('example', VueQRCodeComponent);
 
 var app = new Vue({
     el: '#app',
@@ -794,9 +796,9 @@ var app = new Vue({
         return {
             code: "",
             selected: [],
-            foods: [{ id: 1, name: "豆腐", img: "http://yoro-hack.herokuapp.com/img/toufu.png", code: "t1" }, { id: 2, name: "鶏の唐揚げ", img: "http://yoro-hack.herokuapp.com/img/karaage.png", code: "n2" }, { id: 3, name: "アスパラ串", img: "http://yoro-hack.herokuapp.com/img/asu.png", code: "a2" }, { id: 4, name: "ポテトフライ", img: "http://yoro-hack.herokuapp.com/img/poteto.png", code: "p1" }, { id: 5, name: "ごろごろサラダ", img: "http://yoro-hack.herokuapp.com/img/goro.png", code: "b2" }, { id: 6, name: "ヘルシーサラダ", img: "http://yoro-hack.herokuapp.com/img/sappari.png", code: "c1" }, { id: 7, name: "枝豆", img: "http://yoro-hack.herokuapp.com/img/edamame.png", code: "e1" }, { id: 8, name: "冷やしトマト", img: "http://yoro-hack.herokuapp.com/img/tomato.png", code: "t2" }, { id: 9, name: "ステーキ", img: "http://yoro-hack.herokuapp.com/img/stake.png", code: "item1" }],
-            drinks: [{ id: 10, name: "焼酎", img: "http://yoro-hack.herokuapp.com/img/shou.png", code: "item2" }, { id: 11, name: "ビール", img: "http://yoro-hack.herokuapp.com/img/beer.jpg", code: "b1" }, { id: 12, name: "日本酒", img: "http://yoro-hack.herokuapp.com/img/sake.jpg", code: "item3" }],
-            desserts: [{ id: 13, name: "ゴロッとフルーツ", img: "http://yoro-hack.herokuapp.com/img/furu.png", code: "f1" }]
+            foods: [{ id: 1, name: "豆腐", img: "http://yoro-hack.herokuapp.com/img/toufu.png", codes: ["t1"] }, { id: 2, name: "鶏の唐揚げ", img: "http://yoro-hack.herokuapp.com/img/karaage.png", codes: ["n2"] }, { id: 3, name: "アスパラ串", img: "http://yoro-hack.herokuapp.com/img/asu.png", codes: ["a2"] }, { id: 4, name: "ポテトフライ", img: "http://yoro-hack.herokuapp.com/img/poteto.png", codes: ["p1", "p2"] }, { id: 5, name: "ごろごろサラダ", img: "http://yoro-hack.herokuapp.com/img/goro.png", codes: ["b2", "item5"] }, { id: 6, name: "ヘルシーサラダ", img: "http://yoro-hack.herokuapp.com/img/sappari.png", codes: ["c1", "c2"] }, { id: 7, name: "枝豆", img: "http://yoro-hack.herokuapp.com/img/edamame.png", codes: ["e1"] }, { id: 8, name: "冷やしトマト", img: "http://yoro-hack.herokuapp.com/img/tomato.png", codes: ["t2"] }, { id: 9, name: "ステーキ", img: "http://yoro-hack.herokuapp.com/img/stake.png", codes: ["item1"] }],
+            drinks: [{ id: 10, name: "焼酎", img: "http://yoro-hack.herokuapp.com/img/shou.png", codes: ["item2"] }, { id: 11, name: "ビール", img: "http://yoro-hack.herokuapp.com/img/beer.jpg", codes: ["b1", "item4"] }, { id: 12, name: "日本酒", img: "http://yoro-hack.herokuapp.com/img/sake.jpg", codes: ["item3"] }],
+            desserts: [{ id: 13, name: "ゴロッとフルーツ", img: "http://yoro-hack.herokuapp.com/img/furu.png", codes: ["f1"] }]
         };
     },
     computed: {
@@ -811,7 +813,7 @@ var app = new Vue({
     },
     methods: {
         // 注文商品の数を追加するメソッド
-        add: function add(name, code) {
+        add: function add(name, codes) {
             var filter = [];
             filter = this.selected.filter(function (value) {
                 if (value.name === name) return true;else return false;
@@ -824,7 +826,8 @@ var app = new Vue({
                     }
                 }
             } else {
-                this.selected.push({ name: name, cnt: 1, code: code });
+                var key = Math.floor(Math.random() * 11) % 2;
+                this.selected.push({ name: name, cnt: 1, code: codes[key] });
             }
         },
         // 注文商品の数を減らすメソッド
@@ -1695,35 +1698,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 28 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    }
-});
-
-/***/ }),
+/* 28 */,
 /* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31694,126 +31669,9 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(35)(
-  /* script */
-  __webpack_require__(28),
-  /* template */
-  __webpack_require__(36),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "/Applications/XAMPP/xamppfiles/htdocs/yoro-hack/resources/assets/js/components/Example.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0ba2aa92", Component.options)
-  } else {
-    hotAPI.reload("data-v-0ba2aa92", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports) {
-
-// this module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  scopeId,
-  cssModules
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  // inject cssModules
-  if (cssModules) {
-    var computed = Object.create(options.computed || null)
-    Object.keys(cssModules).forEach(function (key) {
-      var module = cssModules[key]
-      computed[key] = function () { return module }
-    })
-    options.computed = computed
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container"
-  }, [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-md-8 col-md-offset-2"
-  }, [_c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("Example Component")]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
-  }, [_vm._v("\n                    I'm an example component!\n                ")])])])])])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-0ba2aa92", module.exports)
-  }
-}
-
-/***/ }),
+/* 34 */,
+/* 35 */,
+/* 36 */,
 /* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
