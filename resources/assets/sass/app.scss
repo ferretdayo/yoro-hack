@@ -7,3 +7,58 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+.menu-list {
+    background-color: white;
+    height: 1vh;
+    .title {
+        font-size: 20px;
+    }
+}
+.caption {
+    .title {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+}
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.order-list {
+    list-style: none;
+}
+
+.submit {
+    position: fixed;
+    bottom: 0px;
+    width: inherit;
+    margin-bottom: 10px;
+}
+
+.order-cnt {
+    position: fixed;
+    bottom: 50px;
+    .title {
+        font-size: 20px;
+        margin-right: 40px;
+    }
+}
+
+.thumbnail {
+    img {
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 150px;
+        width: 200px;
+    }
+}
+
+.tab-content {
+    margin-top: 20px;
+}
+
+#app {
+    margin-bottom: 80px;
+}
