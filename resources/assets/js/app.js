@@ -61,15 +61,12 @@ const app = new Vue({
             for(let i = 0; i < this.selected.length; i++) {
                 sum += this.selected[i].cnt
             }
-            if (sum < 4) {
-                return "hoge"
+            let rnd = Math.floor(Math.random() * 11)
+            console.log(rnd)
+            if (rnd % 2 == 0) {
+                return sum + ":TEST1";
             }
-            if (sum < 8) {
-                return "foo!!"
-            }
-            if (sum < 10) {
-                return "最高"
-            }
+            return sum + ":TEST2";
         }
     },
     methods: {

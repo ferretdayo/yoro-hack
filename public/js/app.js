@@ -813,15 +813,12 @@ var app = new Vue({
             for (var i = 0; i < this.selected.length; i++) {
                 sum += this.selected[i].cnt;
             }
-            if (sum < 4) {
-                return "hoge";
+            var rnd = Math.floor(Math.random() * 11);
+            console.log(rnd);
+            if (rnd % 2 == 0) {
+                return sum + ":TEST1";
             }
-            if (sum < 8) {
-                return "foo!!";
-            }
-            if (sum < 10) {
-                return "最高";
-            }
+            return sum + ":TEST2";
         }
     },
     methods: {
