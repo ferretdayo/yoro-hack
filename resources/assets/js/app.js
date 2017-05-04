@@ -87,6 +87,9 @@ const app = new Vue({
         },
         error: function() {
             alert("商品を選択していません")
+        },
+        submit: function() {
+            this.selected = []
         }
     }
 });

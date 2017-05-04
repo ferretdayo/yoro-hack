@@ -89,10 +89,12 @@
             <div class="modal-body">
                 <h3>ガチャコード</h3>
                 <br>
+                <qr-code v-bind:value="qrcodeStr"></qr-code>
+                <br>
                 <h1 v-for="select in selected">@{{select.code}}</h1>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" v-on:click="submit()">Close</button>
             </div>
         </div>
     </div>

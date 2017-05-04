@@ -766,8 +766,9 @@ module.exports = g;
 
 /***/ }),
 /* 8 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -839,6 +840,9 @@ var app = new Vue({
         },
         error: function error() {
             alert("商品を選択していません");
+        },
+        submit: function submit() {
+            this.selected = [];
         }
     }
 });
