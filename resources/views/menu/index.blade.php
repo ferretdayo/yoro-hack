@@ -46,25 +46,27 @@
         </div>
     </div>
     <div class="col-md-4 col-sm-3 col-lg-3 menu-list">
-        <h2 class="title">注文リスト</h2>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <td></td>
-                    <td>商品名</td>
-                    <td>注文数</td>
-                    <td></td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="select in selected">
-                    <td><button class="btn btn-primary" v-on:click="sub(select.name)"> - </button></td>
-                    <td>@{{select.name}}</td>
-                    <td>@{{select.cnt}}</td>
-                    <td><button class="btn btn-primary" v-on:click="add(select.name, select.code)"> + </button></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="order-list">
+            <h2 class="title">注文リスト</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>商品名</td>
+                        <td>注文数</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="select in selected">
+                        <td><button class="btn btn-primary" v-on:click="sub(select.name)"> - </button></td>
+                        <td>@{{select.name}}</td>
+                        <td>@{{select.cnt}}</td>
+                        <td><button class="btn btn-primary" v-on:click="add(select.name, select.code)"> + </button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <div class="order-cnt">
             <span class="title">現在の注文数</span><span class="order">@{{allOrder}}</span>
         </div>
