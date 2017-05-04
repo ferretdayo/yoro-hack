@@ -793,9 +793,9 @@ var app = new Vue({
         return {
             code: "",
             selected: [],
-            foods: [{ id: 1, name: "豆腐", img: "http://localhost:8000/img/toufu.png", code: "t1" }, { id: 2, name: "鶏の唐揚げ", img: "http://localhost:8000/img/karaage.png", code: "n2" }, { id: 3, name: "アスパラ串", img: "http://localhost:8000/img/asu.png", code: "a2" }, { id: 4, name: "ポテトフライ", img: "http://localhost:8000/img/poteto.png", code: "p1" }, { id: 5, name: "ごろごろサラダ", img: "http://localhost:8000/img/goro.png", code: "b2" }, { id: 6, name: "ヘルシーサラダ", img: "http://localhost:8000/img/sappari.png", code: "c1" }, { id: 7, name: "枝豆", img: "http://localhost:8000/img/edamame.png", code: "e1" }, { id: 8, name: "冷やしトマト", img: "http://localhost:8000/img/tomato.png", code: "t2" }, { id: 9, name: "ステーキ", img: "http://localhost:8000/img/stake.png", code: "item1" }],
-            drinks: [{ id: 10, name: "焼酎", img: "http://localhost:8000/img/shou.png", code: "item2" }, { id: 11, name: "ビール", img: "http://localhost:8000/img/beer.jpg", code: "b1" }, { id: 12, name: "日本酒", img: "http://localhost:8000/img/sake.jpg", code: "item3" }],
-            desserts: [{ id: 13, name: "ゴロッとフルーツ", img: "http://localhost:8000/img/furu.png", code: "f1" }]
+            foods: [{ id: 1, name: "豆腐", img: "http://yoro-hack.herokuapp.com/img/toufu.png", code: "t1" }, { id: 2, name: "鶏の唐揚げ", img: "http://yoro-hack.herokuapp.com/img/karaage.png", code: "n2" }, { id: 3, name: "アスパラ串", img: "http://yoro-hack.herokuapp.com/img/asu.png", code: "a2" }, { id: 4, name: "ポテトフライ", img: "http://yoro-hack.herokuapp.com/img/poteto.png", code: "p1" }, { id: 5, name: "ごろごろサラダ", img: "http://yoro-hack.herokuapp.com/img/goro.png", code: "b2" }, { id: 6, name: "ヘルシーサラダ", img: "http://yoro-hack.herokuapp.com/img/sappari.png", code: "c1" }, { id: 7, name: "枝豆", img: "http://yoro-hack.herokuapp.com/img/edamame.png", code: "e1" }, { id: 8, name: "冷やしトマト", img: "http://yoro-hack.herokuapp.com/img/tomato.png", code: "t2" }, { id: 9, name: "ステーキ", img: "http://yoro-hack.herokuapp.com/img/stake.png", code: "item1" }],
+            drinks: [{ id: 10, name: "焼酎", img: "http://yoro-hack.herokuapp.com/img/shou.png", code: "item2" }, { id: 11, name: "ビール", img: "http://yoro-hack.herokuapp.com/img/beer.jpg", code: "b1" }, { id: 12, name: "日本酒", img: "http://yoro-hack.herokuapp.com/img/sake.jpg", code: "item3" }],
+            desserts: [{ id: 13, name: "ゴロッとフルーツ", img: "http://yoro-hack.herokuapp.com/img/furu.png", code: "f1" }]
         };
     },
     computed: {
