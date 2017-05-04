@@ -849,6 +849,9 @@ var app = new Vue({
             this.selected = this.selected.filter(function (value) {
                 if (value.cnt > 0) return true;else return false;
             });
+        },
+        error: function error() {
+            alert("商品を選択していません");
         }
     }
 });

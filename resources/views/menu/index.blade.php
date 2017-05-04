@@ -69,7 +69,8 @@
             <span class="title">現在の注文数</span><span class="order">@{{allOrder}}</span>
         </div>
         <div class="submit">
-            <button class="btn btn-warning btn-block" data-toggle="modal" data-target="#myModal">注文</button>
+            <button class="btn btn-warning btn-block" v-if="selected.length > 0" data-toggle="modal" data-target="#myModal">注文</button>
+            <button class="btn btn-warning btn-block" data-toggle="modal" v-on:click="error()">注文</button>
         </div>
     </div>
 </div>
@@ -77,20 +78,21 @@
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">注文しました:D</h4>
-      </div>
-      <div class="modal-body">
-        QRコード？
-        @{{codeGenerate}}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">注文しました:D</h4>
+            </div>
+            <div class="modal-body">
+                <h3>ガチャコード</h3>
+                <br>
+                <h1>@{{codeGenerate}}</h1>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 @endsection

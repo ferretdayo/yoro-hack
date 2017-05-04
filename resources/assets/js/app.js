@@ -100,5 +100,8 @@ const app = new Vue({
                 else return false;
             })
         },
+        error: function() {
+            alert("商品を選択していません")
+        }
     }
 });
