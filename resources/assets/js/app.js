@@ -24,26 +24,23 @@ const app = new Vue({
             code: "",
             selected: [],
             foods: [
-                {id: 1, name: "白ご飯", img: "http://localhost:8000/img/gohan.jpg"},
-                {id: 2, name: "鶏の唐揚げ", img: "http://localhost:8000/img/karaage.jpg"},
-                {id: 3, name: "シーザーサラダ", img: "http://localhost:8000/img/sarada.jpg"},
-                {id: 1, name: "白ご飯", img: "http://localhost:8000/img/gohan.jpg"},
-                {id: 2, name: "鶏の唐揚げ", img: "http://localhost:8000/img/karaage.jpg"},
-                {id: 3, name: "シーザーサラダ", img: "http://localhost:8000/img/sarada.jpg"},
-                {id: 1, name: "白ご飯", img: "http://localhost:8000/img/gohan.jpg"},
-                {id: 2, name: "鶏の唐揚げ", img: "http://localhost:8000/img/karaage.jpg"},
-                {id: 3, name: "シーザーサラダ", img: "http://localhost:8000/img/sarada.jpg"},
+                {id: 1, name: "豆腐", img: "http://localhost:8000/img/toufu.png", code: "t1"},
+                {id: 2, name: "鶏の唐揚げ", img: "http://localhost:8000/img/karaage.png", code: "n2"},
+                {id: 3, name: "アスパラ串", img: "http://localhost:8000/img/asu.png", code: "a2"},
+                {id: 4, name: "ポテトフライ", img: "http://localhost:8000/img/poteto.png", code: "p1"},
+                {id: 5, name: "ごろごろサラダ", img: "http://localhost:8000/img/goro.png", code: "b2"},
+                {id: 6, name: "ヘルシーサラダ", img: "http://localhost:8000/img/sappari.png", code: "c1"},
+                {id: 7, name: "枝豆", img: "http://localhost:8000/img/edamame.png", code: "e1"},
+                {id: 8, name: "冷やしトマト", img: "http://localhost:8000/img/tomato.png", code: "t2"},
+                {id: 9, name: "ステーキ", img: "http://localhost:8000/img/stake.png", code: "item1"},
             ],
             drinks: [
-                {id: 1, name: "お茶", img: "http://localhost:8000/img/ocha.jpg"},
-                {id: 2, name: "ビール", img: "http://localhost:8000/img/beer.jpg"},
-                {id: 3, name: "コークハイ", img: "http://localhost:8000/img/sake.jpg"},
+                {id: 10, name: "焼酎", img: "http://localhost:8000/img/shou.png", code: "item2"},
+                {id: 11, name: "ビール", img: "http://localhost:8000/img/beer.jpg", code: "b1"},
             ],
             desserts: [
-                {id: 1, name: "パンケーキ", img: "http://localhost:8000/img/pancake.jpg"},
-                {id: 2, name: "バニラアイス", img: "http://localhost:8000/img/ice.jpg"},
-                {id: 3, name: "パフェ", img: "http://localhost:8000/img/pafe.jpg"},
-            ]
+                {id: 12, name: "ゴロッとフルーツ", img: "http://localhost:8000/img/furu.png", code: "f1"},
+            ],
         }
     },
     computed: {
@@ -55,23 +52,10 @@ const app = new Vue({
             }
             return sum;
         },
-        // キャラクター or アイテムのコードの生成
-        codeGenerate: function() {
-            let sum = 0;
-            for(let i = 0; i < this.selected.length; i++) {
-                sum += this.selected[i].cnt
-            }
-            let rnd = Math.floor(Math.random() * 11)
-            console.log(rnd)
-            if (rnd % 2 == 0) {
-                return sum + ":TEST1";
-            }
-            return sum + ":TEST2";
-        }
     },
     methods: {
         // 注文商品の数を追加するメソッド
-        add: function(name) {
+        add: function(name, code) {
             let filter = []
             filter = this.selected.filter((value) => {
                 if (value.name === name) return true;
@@ -85,7 +69,7 @@ const app = new Vue({
                     }
                 }
             } else {
-                this.selected.push({name: name, cnt: 1})
+                this.selected.push({name: name, cnt: 1, code: code})
             }
         },
         // 注文商品の数を減らすメソッド

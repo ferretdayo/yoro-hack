@@ -16,7 +16,7 @@
                         <img v-bind:src="food.img" alt="..." width="200" height="200">
                         <div class="caption">
                             <h3 class="title">@{{food.name}}</h3>
-                            <p><a href="#" class="btn btn-success btn-block add" role="button" v-on:click="add(food.name)">追加</a></p>
+                            <p><a href="#" class="btn btn-success btn-block add" role="button" v-on:click="add(food.name, food.code)">追加</a></p>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                         <img v-bind:src="drink.img" alt="..." width="200" height="200">
                         <div class="caption">
                             <h3 class="title">@{{drink.name}}</h3>
-                            <p><a href="#" class="btn btn-success btn-block add" role="button" v-on:click="add(drink.name)">追加</a></p>
+                            <p><a href="#" class="btn btn-success btn-block add" role="button" v-on:click="add(drink.name, drink.code)">追加</a></p>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                         <img v-bind:src="dessert.img" alt="..." width="200" height="200">
                         <div class="caption">
                             <h3 class="title">@{{dessert.name}}</h3>
-                            <p><a href="#" class="btn btn-success btn-block add" role="button" v-on:click="add(dessert.name)">追加</a></p>
+                            <p><a href="#" class="btn btn-success btn-block add" role="button" v-on:click="add(dessert.name, dessert.code)">追加</a></p>
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                     <td><button class="btn btn-primary" v-on:click="sub(select.name)"> - </button></td>
                     <td>@{{select.name}}</td>
                     <td>@{{select.cnt}}</td>
-                    <td><button class="btn btn-primary" v-on:click="add(select.name)"> + </button></td>
+                    <td><button class="btn btn-primary" v-on:click="add(select.name, select.code)"> + </button></td>
                 </tr>
             </tbody>
         </table>
@@ -87,7 +87,7 @@
             <div class="modal-body">
                 <h3>ガチャコード</h3>
                 <br>
-                <h1>@{{codeGenerate}}</h1>
+                <h1 v-for="select in selected">@{{select.code}}</h1>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
