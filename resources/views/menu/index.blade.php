@@ -16,7 +16,7 @@
                         <img v-bind:src="food.img" alt="..." width="200" height="200">
                         <div class="caption">
                             <h3 class="title">@{{food.name}}</h3>
-                            <p><button href="#" class="btn btn-success btn-block add" v-on:click="add(food.name, food.code)">追加</buttona></p>
+                            <p><button class="btn btn-success btn-block add" v-on:click="add(food.name, food.code)">追加</buttona></p>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                         <img v-bind:src="drink.img" alt="..." width="200" height="200">
                         <div class="caption">
                             <h3 class="title">@{{drink.name}}</h3>
-                            <p><button href="#" class="btn btn-success btn-block add" v-on:click="add(drink.name, drink.code)">追加</button></p>
+                            <p><button class="btn btn-success btn-block add" v-on:click="add(drink.name, drink.code)">追加</button></p>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                         <img v-bind:src="dessert.img" alt="..." width="200" height="200">
                         <div class="caption">
                             <h3 class="title">@{{dessert.name}}</h3>
-                            <p><button href="#" class="btn btn-success btn-block add" v-on:click="add(dessert.name, dessert.code)">追加</button></p>
+                            <p><button class="btn btn-success btn-block add" v-on:click="add(dessert.name, dessert.code)">追加</button></p>
                         </div>
                     </div>
                 </div>
